@@ -14,10 +14,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize OpenAI only if key is set (allow running without a key)
+const OPENAI_KEY = process.env.OPENAI_API_KEY;
+let openai = null;
+if (OPENAI_KEY && OPENAI_KEY !== 'your_openai_api_key_here') {
+  openai = new OpenAI({ apiKey: OPENAI_KEY });
+} else {
+  console.warn('OpenAI API key not configured — running in local fallback mode.');
+}
 
 // Middleware
 app.use(cors());
@@ -80,32 +84,44 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 'your_openai_api_key_here') {
-      return res.status(500).json({ 
-        error: 'OpenAI API key not configured. Please set OPENAI_API_KEY in .env file.' 
+    // If OpenAI is configured, call the API. Otherwise, return a local fallback reply.
+    if (openai) {
+      const messages = [
+        { role: 'system', content: getSystemPrompt() },
+        ...history.slice(-10),
+        { role: 'user', content: message }
+      ];
+
+      const completion = await openai.chat.completions.create({
+        model: 'gpt-4',
+        messages: messages,
+        temperature: 0.7,
+        max_tokens: 800,
+      });
+
+      return res.json({
+        message: completion.choices[0].message.content,
+        usage: completion.usage
       });
     }
 
-    // Build messages array
-    const messages = [
-      { role: 'system', content: getSystemPrompt() },
-      ...history.slice(-10), // Keep last 5 exchanges
-      { role: 'user', content: message }
-    ];
+    // Local fallback (basic search / canned response)
+    const createLocalReply = (query) => {
+      const q = (query || '').toLowerCase().trim();
+      if (Object.keys(knowledgeBase).length > 0) {
+        const hay = JSON.stringify(knowledgeBase).toLowerCase();
+        const idx = hay.indexOf(q);
+        if (q && idx !== -1) {
+          const start = Math.max(0, idx - 200);
+          const excerpt = hay.substring(start, Math.min(hay.length, idx + 600));
+          return `Namaste — (local) I found a passage in the project documents that may help:\n\n${excerpt.replace(/\s+/g, ' ')}\n\n(Enable an OpenAI API key to get richer conversational answers.)`;
+        }
+        return `Namaste — OpenAI is not configured. I can provide basic info from local docs but couldn't find a direct match for "${query}". Try a different question or enable an API key for AI-powered answers.`;
+      }
+      return 'Namaste — OpenAI API key is not configured and no local knowledge base is available. To enable conversational AI, set OPENAI_API_KEY in .env or export it in your shell.';
+    };
 
-    // Call OpenAI
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4',
-      messages: messages,
-      temperature: 0.7,
-      max_tokens: 800,
-    });
-
-    res.json({
-      message: completion.choices[0].message.content,
-      usage: completion.usage
-    });
-
+    return res.json({ message: createLocalReply(message), usage: null });
   } catch (error) {
     console.error('Chat API error:', error);
     res.status(500).json({ 

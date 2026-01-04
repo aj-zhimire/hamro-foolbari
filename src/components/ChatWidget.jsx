@@ -4,12 +4,13 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
+  const initialMessages = [
     {
       role: 'assistant',
       content: 'Namaste! 🙏 Welcome to Hamro Foolbari, Sajha Foolbari Gyan Kunja. I can answer questions about our non-profit school system in Ramechhap, Nepal. How can I help you today?'
     }
-  ]);
+  ];
+  const [messages, setMessages] = useState(initialMessages);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
@@ -96,14 +97,23 @@ export default function ChatWidget() {
               <h3 className="font-semibold text-lg">Hamro Foolbari Assistant</h3>
               <p className="text-sm opacity-90">Ask about our school project</p>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="hover:bg-white/20 rounded-lg p-1 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setMessages(initialMessages)}
+                title="Clear conversation"
+                className="bg-white/20 hover:bg-white/30 rounded-md px-2 py-1 text-sm transition-colors"
+              >
+                Clear
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="hover:bg-white/20 rounded-lg p-1 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Messages */}
