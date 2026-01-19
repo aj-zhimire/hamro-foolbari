@@ -7,97 +7,55 @@ export default function Progress() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Phase 0: Foundation
+            Phase 0: Open by Design
           </h1>
-          <p className="text-xl text-gray-600">
-            A narrow, practical rollout focused on proving the core model.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            This phase exists for one purpose: radical transparency.
           </p>
         </div>
 
-        {/* What Phase 0 Covers */}
+        {/* Core Principles */}
         <section className="mb-16">
-          <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white rounded-2xl p-8">
-            <h2 className="text-3xl font-bold mb-4">What Phase 0 Covers</h2>
-            <p className="text-lg opacity-90 mb-6">
-              We focus only on the minimum needed to validate the model before launch.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div className="bg-white/10 rounded-lg p-4">
-                <p className="font-semibold mb-2">Core outcomes</p>
-                <ul className="space-y-1 opacity-90">
-                  <li>✓ Local community alignment</li>
-                  <li>✓ Lean curriculum outline</li>
-                  <li>✓ Baseline governance structure</li>
-                  <li>✓ Initial resource map</li>
-                </ul>
-              </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <p className="font-semibold mb-2">How we validate</p>
-                <ul className="space-y-1 opacity-90">
-                  <li>✓ Listening sessions with families</li>
-                  <li>✓ Teacher interest and fit</li>
-                  <li>✓ Site feasibility checks</li>
-                  <li>✓ Transparent documentation</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Current Focus */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Current Focus</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                title: 'Community + partners',
-                description: 'Build local ownership with parents, educators, and civic leaders.',
-                icon: '🤝',
+                title: 'Progress, shared openly',
+                description:
+                  'This page will be a live record of our work—decisions made, steps completed, and milestones reached. No polished storytelling. Just honest progress, shared as it happens.',
               },
               {
-                title: 'Phase 0 plan',
-                description: 'Finalize a minimum viable scope for the pilot school.',
-                icon: '🧭',
+                title: 'Clear, consistent messaging',
+                description:
+                  'We will communicate what we are doing, why we are doing it, and what comes next—clearly and repeatedly—so everyone stays aligned, informed, and engaged.',
               },
               {
-                title: 'Resource readiness',
-                description: 'Identify space, tools, and funding needed to begin.',
-                icon: '🏗️',
+                title: 'Challenges, not hidden',
+                description:
+                  'We will openly publish issues, constraints, and roadblocks as they arise. These realities are part of building something meaningful, and sharing them creates opportunities for local insight, collaboration, and solutions.',
+              },
+              {
+                title: 'An invitation to participate',
+                description:
+                  'By making our process visible, we invite educators, community members, and well-wishers to contribute knowledge, guidance, and support—where it truly helps.',
               },
             ].map((item, index) => (
-              <div key={index} className="card text-center">
-                <div className="text-4xl mb-3">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+              <div key={index} className="card">
+                <h2 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h2>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Support Needed */}
+        {/* Closing */}
         <section>
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-              Support We Need in Phase 0
-            </h2>
-            <p className="text-gray-700 text-center mb-6">
-              We are seeking local advocates, educators, and aligned partners who care about
-              a transparent, community-owned model.
+          <div className="bg-gray-50 rounded-2xl p-8 text-center">
+            <p className="text-lg text-gray-700 mb-2">
+              This phase is not about perfection.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="card">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Local partners</h3>
-                <p className="text-gray-600">
-                  Help connect us to families, local leaders, and potential spaces.
-                </p>
-              </div>
-              <div className="card">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Education support</h3>
-                <p className="text-gray-600">
-                  Share curriculum expertise, teacher training ideas, and practical tools.
-                </p>
-              </div>
-            </div>
+            <p className="text-gray-700">
+              It is about trust, clarity, and collective momentum.
+            </p>
           </div>
         </section>
       </div>
