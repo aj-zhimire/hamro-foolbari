@@ -7,11 +7,7 @@ export default function Header() {
   const navigation = [
     { name: 'Home', path: '/' },
     { name: 'Mission', path: '/mission' },
-    { name: 'Curriculum', path: '/curriculum' },
-    { name: 'Governance', path: '/governance' },
-    { name: 'Why Ramechhap', path: '/why-ramechhap' },
-    { name: 'Progress', path: '/progress' },
-    { name: 'Transparency', path: '/transparency' },
+    { name: 'Phase 0', path: '/phase-0' },
   ];
 
   return (

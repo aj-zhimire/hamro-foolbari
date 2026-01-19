@@ -126,6 +126,23 @@ export default function Mission() {
           </div>
         </section>
 
+        {/* Phase 0 Focus */}
+        <section className="mb-16">
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Phase 0 Focus</h2>
+            <p className="text-gray-700 mb-4">
+              Our current work is intentionally narrow: validate the foundation before
+              any broader rollout.
+            </p>
+            <ul className="space-y-2 text-gray-600">
+              <li>• Community alignment and local governance support</li>
+              <li>• Lean curriculum outline tied to learning-by-doing</li>
+              <li>• Minimum viable resource and staffing plan</li>
+              <li>• Transparent documentation of decisions and policies</li>
+            </ul>
+          </div>
+        </section>
+
         {/* Commitment */}
         <section>
           <div className="bg-gray-50 rounded-2xl p-8 text-center">

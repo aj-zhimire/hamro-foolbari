@@ -7,7 +7,7 @@ export default function ChatWidget() {
   const initialMessages = [
     {
       role: 'assistant',
-      content: 'Namaste! 🙏 Welcome to Hamro Foolbari, Sajha Foolbari Gyan Kunja. I can answer questions about our non-profit school system in Ramechhap, Nepal. How can I help you today?'
+      content: 'Namaste! 🙏 Welcome to Hamro Foolbari, Sajha Foolbari Gyan Kunja. We are in Phase 0, building a proof-of-concept community school in Ramechhap, Nepal. How can I help?'
     }
   ];
   const [messages, setMessages] = useState(initialMessages);
@@ -25,9 +25,9 @@ export default function ChatWidget() {
 
   const quickQuestions = [
     'What is Hamro Foolbari?',
-    'Tell me about the curriculum',
-    'How can I support this project?',
-    'Why Ramechhap?'
+    'What is the Phase 0 plan?',
+    'How do you plan to do this?',
+    'How can I support Phase 0?'
   ];
 
   const sendMessage = async (text = input) => {
