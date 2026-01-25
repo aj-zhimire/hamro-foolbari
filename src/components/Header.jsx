@@ -6,7 +6,6 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', path: '/' },
-    { name: 'Mission', path: '/mission' },
     { name: 'Phase 0', path: '/phase-0' },
   ];
 

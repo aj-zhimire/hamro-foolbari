@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import Home from './pages/Home';
-import Mission from './pages/Mission';
 import Progress from './pages/Progress';
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/mission" element={<Mission />} />
           <Route path="/phase-0" element={<Progress />} />
         </Routes>
       </main>
