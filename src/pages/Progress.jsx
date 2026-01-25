@@ -6,8 +6,8 @@ export default function Progress() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Phase 0 -&gt; Roadmap Creation
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+            Phase 0 : Research and Roadmap
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Select one clearly identified community for the first pilot school,
