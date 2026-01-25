@@ -1,1 +1,0 @@
-# Ramechhap Rationale

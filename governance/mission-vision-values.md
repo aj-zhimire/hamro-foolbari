@@ -1,1 +1,0 @@
-# Mission Vision Values

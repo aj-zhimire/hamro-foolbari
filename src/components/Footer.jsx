@@ -28,9 +28,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/mission" className="hover:text-white transition-colors">
-                  Mission & Values
-                </Link>
               </li>
               <li>
                 <Link to="/phase-0" className="hover:text-white transition-colors">
