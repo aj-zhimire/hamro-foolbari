@@ -7,43 +7,59 @@ export default function Progress() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Phase 0: Open by Design
+            Phase 0 — Concrete Outcome
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            This phase exists for one purpose: radical transparency.
+            Select one clearly identified community for the first pilot school,
+            supported by a written, evidence-based justification explaining why this
+            location is the right starting point.
           </p>
         </div>
 
         {/* Core Principles */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'Progress, shared openly',
-                description:
-                  'This page will be a live record of our work—decisions made, steps completed, and milestones reached. No polished storytelling. Just honest progress, shared as it happens.',
-              },
-              {
-                title: 'Clear, consistent messaging',
-                description:
-                  'We will communicate what we are doing, why we are doing it, and what comes next—clearly and repeatedly—so everyone stays aligned, informed, and engaged.',
-              },
-              {
-                title: 'Challenges, not hidden',
-                description:
-                  'We will openly publish issues, constraints, and roadblocks as they arise. These realities are part of building something meaningful, and sharing them creates opportunities for local insight, collaboration, and solutions.',
-              },
-              {
-                title: 'An invitation to participate',
-                description:
-                  'By making our process visible, we invite educators, community members, and well-wishers to contribute knowledge, guidance, and support—where it truly helps.',
-              },
-            ].map((item, index) => (
-              <div key={index} className="card">
-                <h2 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h2>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              What We Must Do to Achieve This
+            </h2>
+            <ol className="space-y-5 text-gray-700">
+              <li className="flex gap-3">
+                <span className="font-semibold text-gray-900">1.</span>
+                <div>
+                  <p className="font-semibold text-gray-900">
+                    Shortlist candidate communities
+                  </p>
+                  <p>
+                    Use school data, basic demographics, and local insight to
+                    identify 3–5 viable locations.
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-semibold text-gray-900">2.</span>
+                <div>
+                  <p className="font-semibold text-gray-900">
+                    Evaluate locations consistently
+                  </p>
+                  <p>
+                    Apply a common comparison framework to assess need,
+                    feasibility, community readiness, and accessibility.
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-semibold text-gray-900">3.</span>
+                <div>
+                  <p className="font-semibold text-gray-900">
+                    Document the final choice
+                  </p>
+                  <p>
+                    Produce a concise written rationale explaining the selection
+                    and trade-offs.
+                  </p>
+                </div>
+              </li>
+            </ol>
           </div>
         </section>
 
