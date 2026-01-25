@@ -47,6 +47,26 @@ export default function Progress() {
           </div>
         </section>
 
+        {/* Meeting Minutes */}
+        <section className="mb-16">
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Meeting Minutes
+            </h2>
+            <p className="text-gray-700 mb-6">
+              Official records from Phase 0 coordination and planning meetings.
+            </p>
+            <a
+              href="/data/Phase_0_Meeting_Minutes_Clean_2026-01-26.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center"
+            >
+              View Phase 0 Meeting Minutes (Jan 26, 2026)
+            </a>
+          </div>
+        </section>
+
         {/* Closing */}
         <section>
           <div className="bg-gray-50 rounded-2xl p-8 text-center">
