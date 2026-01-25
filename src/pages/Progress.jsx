@@ -57,7 +57,7 @@ export default function Progress() {
               Official records from Phase 0 coordination and planning meetings.
             </p>
             <a
-              href="/data/Phase_0_Meeting_Minutes_Clean_2026-01-26.pdf"
+              href={`${import.meta.env.BASE_URL}data/Phase_0_Meeting_Minutes_Clean_2026-01-26.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center"
